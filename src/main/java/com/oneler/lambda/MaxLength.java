@@ -1,9 +1,5 @@
 package com.oneler.lambda;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-import com.sun.xml.internal.fastinfoset.algorithm.BuiltInEncodingAlgorithm;
-
-import javax.validation.constraints.Max;
 import java.io.*;
 import java.util.*;
 import java.util.function.Supplier;
@@ -17,7 +13,7 @@ import java.util.stream.Stream;
 public class MaxLength {
     public void read() {
         try {
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(MaxLength.class.getResource("/a.txt").getFile()));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(MaxLength.class.getResource("/a.html").getFile()));
             int longlength = bufferedReader.lines()
                     .mapToInt(String::length)
                     .max()
@@ -51,9 +47,10 @@ public class MaxLength {
     }
 
     public static void main(String[] args) {
+        Stream.generate(() -> Math.random()).limit(10).forEach(x-> System.out.println(x+"fff"));
         System.out.println(ClassLoader. getSystemClassLoader());
         System.out.println( System.getProperty("user.dir"));
-        File file3 = new File(MaxLength.class.getResource("/a.txt").getFile());
+        File file3 = new File(MaxLength.class.getResource("/a.html").getFile());
         new MaxLength().tranlate();
         List<String> a = new ArrayList<>();
         a.add("fdsaf");
@@ -82,5 +79,25 @@ public class MaxLength {
         }*/
 
         System.out.println("dd"+"中1".getBytes().length);
+
+        IntStream.range(1, 3).forEach(System.out::println);
+        ArrayList aa = new ArrayList();
+        Stream.iterate(0,n -> n+1).limit(1001).forEach(x ->aa.add(x));
+        List<List<Integer>> partition = com.google.common.collect.Lists.partition(aa, 100);
+        IntStream.rangeClosed(1, 3).forEach(System.out::println);
+        System.out.println(System.nanoTime());
+        System.out.println(System.currentTimeMillis());
+        Stream.of("one", "two", "three", "four")
+                .filter(e -> e.length() > 3)
+                .peek(e -> System.out.println("Filtered value: " + e))
+                .map(String::toUpperCase)
+                .peek(e -> System.out.println("Mapped value: " + e))
+                .collect(Collectors.toList());
+        new File(".").listFiles(File::isHidden);
+
+        new Thread(() -> System.out.println("aa"));
     }
+
+
+
 }
