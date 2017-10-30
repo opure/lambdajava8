@@ -12,9 +12,6 @@ import java.util.Date;
 @RequestMapping("/")
 @RestController
 public class TestController {
-
-
-
     @RequestMapping("/time")
     public void test(Date date) {
         System.out.println(date);

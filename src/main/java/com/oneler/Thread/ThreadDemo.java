@@ -8,7 +8,10 @@ import java.util.concurrent.Executors;
  */
 public class ThreadDemo {
     public static void main(String[] args) {
-
+        Integer a =2000;
+        Integer b =2000;
+        System.out.println(a<b);
+        System.out.println(Runtime.getRuntime().availableProcessors());
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute( new Thread(() -> {
             System.out.println("fff");

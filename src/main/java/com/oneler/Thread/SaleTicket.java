@@ -6,7 +6,7 @@ public class SaleTicket implements Runnable {
     public int count;
 
     public SaleTicket() {
-        total = 100;
+        total = 1000000;
         count = 0;
     }
 

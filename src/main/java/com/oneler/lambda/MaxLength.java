@@ -51,6 +51,7 @@ public class MaxLength {
         System.out.println(ClassLoader. getSystemClassLoader());
         System.out.println( System.getProperty("user.dir"));
         File file3 = new File(MaxLength.class.getResource("/a.html").getFile());
+        System.out.println(file3);
         new MaxLength().tranlate();
         List<String> a = new ArrayList<>();
         a.add("fdsaf");

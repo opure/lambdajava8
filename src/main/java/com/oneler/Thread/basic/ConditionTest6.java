@@ -12,13 +12,9 @@ public class ConditionTest6 {
     public static void main(String[] args) throws InterruptedException {
         MyService ms = new MyService();
 
-        new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                for (int i = 1; i <= 50; i++) {
-                    ms.sub(i);
-                }
+        new Thread(() -> {
+            for (int i = 1; i <= 50; i++) {
+                ms.sub(i);
             }
         }) {
         }.start();
