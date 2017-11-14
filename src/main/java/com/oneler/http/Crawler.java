@@ -59,7 +59,7 @@ public final class Crawler {
                         e.printStackTrace();
                     }
                 }
-            });gg
+            });
 
         }
         executor.shutdown();
